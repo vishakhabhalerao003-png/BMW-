@@ -4,104 +4,733 @@
 		<title>
 			Bayerische Motoren Werke
 		</title>
-		
-		<link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK9iBPJZoJ7TNELu58S-JgEflo-zrArG85d4_CW8ORjw&s=10">
-		
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.9.1/remixicon.css" integrity="sha512-FdAV4hphiNQnSV3CopyZQ5GY8ZNiwmI0pGo8meKtmmKjtiro8TNuRB6tqanbQo+tMGRcYxYJkBT5lQTe/3oTlQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
-
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.9.1/remixicon.css">
 		<style>
+			* {
+				box-sizing: border-box;
+			}
 
 			body {
+				margin:0;
+				padding:0
+			}
+
+			.main-header {
+				width: 100%;
+				height: 105px;
 				background-color: #242424;
 				color: white;
-				margin: 0;
-				padding: 0;
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 1000;
 			}
 
-			
-			section, nav {
-				width:80%;
-				margin:auto;
+			.top-header {
+				height: 65px;
+				position: relative;
+			}
+
+			.dealer-name {
+				position: absolute;
+				left: 120px;
+				top: px;
+			}
+
+			.dealer-name h3 {
+				font-size: 18px;
+			}
+
+			.dealer-name p {
+				font-size: 12px;
+				margin-top: 0px;
+			}
+
+			.offer-text {
+				position: absolute;
+				left: 36.5%;
+				top: 18px;
+				font-size: 12px;
+			}
+
+			.know-more {
+				position: absolute;
+				left: 60%;
+				top: 15px;
+				width: 122px;
+				height: 42px;
+				border: 2px solid white;
+				color: white;
+				text-decoration: none;
+				text-align: center;
+				padding-top: 11px;
+				font-size: 12px;
+			}
+
+			.header-icons {
+				position: absolute;
+				left: 71%;
+				top: 15px;
+			}
+
+			.header-icons i {
+				font-size: 20px;
+				color: #aaa;
+				margin-right: 25px;
+			}
+
+			.bmw-logo {
+				position: absolute;
+				right: 10%;
+				top: 17px;
+			}
+
+			.bmw-logo img {
+				width: 70px;
+				height: 70px;
+			}
+
+			.navbar {
+				height: 50px;
+				position: relative;
+				padding-left: 120px;
+				padding-top: 14px;
+			}
+
+			.navbar a {
+				color: white;
+				text-decoration: none;
+				font-size: 14px;
+				margin-right: 29px;
+			}
+
+			.navbar a:hover {
+				color: #aaa;
 			}
 			
-			section > div {
-				display: inline-block;
-			}
+			a {
+                color: white;
+                text-decoration: none;
+            }
 			
-			.know {
-				border:3px solid white;
-				width:8%;
-				padding:6px;
-				text-align:center;
-				text-decoration:none;
-				color:white
-			}
+			.hero {
+                position: relative;
+                height: 550px;
+            }
+
+            .hero img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .hero-content {
+                position: absolute;
+                left: 8%;
+                bottom: 10%;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .button {
+                display: inline-block;
+                margin: 5px;
+                padding: 12px 16px;
+                border: 2px solid white;
+                text-align: center;
+                font-size: 13px;
+            }
 			
-			.know:hover {
-				background-color:white;
-				color:black
+			.brochure-offers {
+				width: 86%;
+				margin: 40px auto;
+				color: white;
 			}
+
+			.brochure {
+				height: 102px;
+				position: relative;
+			}
+
+			.download-btn {
+				position: absolute;
+				right: 0;
+				top: 20px;
+				width: 163px;
+				height: 61px;
+				background-color: #e5e5e5;
+				color: #555;
+				text-decoration: none;
+				border-radius: 11px;
+				display: block;
+			}
+
+			.download-btn i {
+				position: absolute;
+				left: 13px;
+				top: 17px;
+				font-size: 25px;
+			}
+
+			.download-btn span {
+				position: absolute;
+				left: 52px;
+				top: 14px;
+				font-size: 12px;
+			}
+
+			.offers {
+				height: 80px;
+				position: relative;
+			}
+
+			.offers h3 {
+				position: absolute;
+				top: 2px;
+				left: 0;
+				font-size: 18px;
+			}
+
+			.plus {
+				position: absolute;
+				right: 36px;
+				top: 18px;
+				font-size: 24px;
+			}
+
+			.side {
+				margin:0% 0% 0% 75%;
+			}
+
+            .button:hover,
+            .know:hover,
+			.know-more:hover,
+            button:hover {
+                background-color: white;
+                color: black;
+            }
+
+            .page-content {
+                width: 84%;
+                margin: auto;
+            }
+
+            .intro {
+                padding: 28px 0 1px 0;
+            }
+
+            .intro h2 {
+                font-size: 28px;
+            }
+
+            .reasons {
+                width: 75%;
+                margin: 40px auto;
+            }
+
+            .reason {
+                padding: 10px;
+            }
+
+            .reason strong {
+                margin-right: 20px;
+                color: #888;
+                font-size: 28px;
+            }
+
+            .reason p {
+                display: inline;
+            }
 			
-			section > div p {
-				font-size:12px;
+			footer {
+                padding-top: 20px;
+            }
+
+            .footer-content,
+            .footer-links {
+                width: 84%;
+                margin: 25px auto;
+            }
+
+            .footer-column {
+                display: inline-block;
+                width: 18%;
+                margin: 0 8px;
 			}
+
+            .footer-column h4 {
+                font-size: 16px;
+				color:grey
+            }
+
+            .footer-column p {
+                font-size: 13px;
+				color:grey
+            }
+
+            .footer-links > div {
+                display: inline-block;
+                width: 30%;
+				color:grey
+            }
+
+            .footer-links a {
+                display: block;
+                margin: 10px 0;
+                font-size: 12px;
+				color:grey
+            }
+
+            .footer-links a:hover {
+                color: #1685e5;
+            }
+
+            .footer-links .social-link {
+                display: inline-block;
+                margin-right: 12px;
+            }
+
+            .copyright {
+                padding: 15px 8%;
+                font-size: 12px;
+            }
+
+            .copyright p,
+            .copyright div {
+                display: inline-block;
+                width: 49%;
+            }
+
+            .copyright div {
+                text-align: right;
+            }
+
+            .copyright a {
+                margin: 0 5px;
+            }
 			
-			section i {
-				font-size:23px;
-				margin:8% 0%;
-				background-color:red
-			}
+			.highlights {
+                margin: 50px 0;
+                text-align: center;
+            }
+
+            .highlight-card {
+                position: relative;
+                display: inline-block;
+                width: 23%;
+                height: 500px;
+                margin: 5px;
+            }
+
+            .highlight-card img {
+                width: 100%;
+            }
+
+            .highlight-card h3 {
+                position: absolute;
+                right: 0;
+                bottom: 20%;
+                left: 0;
+                margin: 0;
+                padding: 14px 5px;
+                font-size: 15px;
+            }
+
+            .registration-layout {
+                margin: 40px 0;
+                font-size: 0;
+            }
+
+            .registration-section,
+            .registration-image {
+                display: inline-block;
+                width: 50%;
+                font-size: 16px;
+            }
+
+            .registration-section {
+                padding: 25px 25px 50px 0;
+            }
+
+            .registration-image img {
+                display: block;
+                width: 100%;
+                margin-bottom:75%;
+            }
+
+            .registration {
+                margin: 30px 0;
+            }
+
+            .registration label,
+            .popup label {
+                display: block;
+                margin: 15px 0 7px;
+            }
+
+            .registration input,
+            .registration select,
+            .popup input,
+            .popup select {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #666;
+                background-color: #303030;
+                color: white;
+            }
+
+            .check-row {
+                margin: 20px 0;
+            }
+
+            .check-row input {
+                width: auto;
+            }
+
+            .check-row label {
+                display: inline;
+            }
+
+            button {
+                display: block;
+                width: 250px;
+                margin: 25px auto;
+                padding: 13px;
+                border: 2px solid white;
+                color: white;
+				background-color:#242424
+            }
+
+            .shopping {
+                padding: 35px 0;
+                text-align: center;
+            }
+
+            .shopping-line {
+                width: 240px;
+                margin: auto;
+            }
+
+            .tool-card {
+                display: inline-block;
+                width: 155px;
+                height: 190px;
+                margin: 25px 8px;
+                padding: 35px 10px;
+                background: #eee;
+                color: #666;
+            }
+
+            .tool-card i {
+                display: block;
+                margin-bottom: 25px;
+                font-size: 42px;
+            }
+
+            .tool-card:hover {
+                background: white;
+                color: #0878df;
+            }
+
+            .finance {
+                width: 84%;
+                margin: 20px auto 35px;
+            }
+
+            .finance h3 {
+                font-size: 15px;
+            }
+
+            .finance p {
+                font-size: 14px;
+            }
+
+            .finance a {
+                color: #1685e5;
+            }
+
+			.back-top {
+                position: fixed;
+                right: 18px;
+                bottom: 48px;
+                width: 42px;
+                height: 42px;
+                border: 1px solid white;
+                border-radius: 50%;
+                text-align: center;
+                font-size: 23px;
+				padding:6px
+            }
 			
-			nav > div {
-				width:10%;
-				display: inline-block;
-			}
-			
-			img {
-				display:inline-block; 
-				position:absolute; 
-				top: 20px; 
-				right:15%; 
-				width:5%
-			}
-	
 		</style>
 	</head>
-
 	<body>
+		<header class="main-header">
 
-		<header>
-			<section>
-				<div>
+			<div class="top-header">
+
+				<div class="dealer-name">
 					<h3>BMW BAVARIA MOTORS</h3>
 					<p>PUNE, CHHATRAPATI SAMBHAJINAGAR & GOA</p>
 				</div>
-				
-				<b style="padding:0% 8%; margin-bottom:">Savings of upto 100% on Road Tax on i7</b>
-				
-				<div>
-					<a class="know" href="https://www.bmw-bavariamotors.in/find-us?charging=1">Know More</a>
-				</div>
-				
-				<div>
-					<i class="ri-contacts-book-3-line"></i>
-					<i class="ri-phone-line"></i>
-					<i class="ri-steering-2-line"></i>
-					<i class="ri-map-pin-line"></i>
-				</div>
-			</section>
-			<nav>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<img src="https://www.bmw-bavariamotors.in/themes/custom/bmw/images/BMW_White_Logo.svg">
-			</nav>
-		</header>
 
+				<div class="offer-text">
+					<p>SAVINGS OF UPTO 100% ON ROAD TAX ON I7</p>
+				</div>
+
+				<a href="https://www.bmw-bavariamotors.in/find-us?charging=1" class="know-more">KNOW MORE</a>
+
+				<div class="header-icons">
+					<i class="ri-calendar-2-line"></i>
+					<i class="ri-phone-fill"></i>
+					<i class="ri-steering-2-fill"></i>
+					<i class="ri-map-pin-2-fill"></i>
+				</div>
+
+				<div class="bmw-logo">
+					<img src="https://www.bmw-bavariamotors.in/themes/custom/bmw/images/BMW_White_Logo.svg" alt="BMW Logo">
+				</div>
+
+			</div>
+
+
+			<nav class="navbar">
+
+				<a href="#top">Home</a>
+				<a href="">New Cars</a>
+				<a href="https://www.bmwusedcars.in/bavaria-motors">Pre-Owned Cars</a>
+				<a href="">Services</a>
+				<a href="">Finance & Offers</a>
+				<a href="">Explore</a>
+				<a href="">Contact Us</a>
+				<a href="https://www.bmw.in/en-in/sl/vehiclefinder/results?filters=%257B%2522IS_INSTALLMENT%2522%253Atrue%252C%2522PRODUCT_CATEGORY_TYPE%2522%253A%255B%2522LOAN%2522%255D%257D&buno=51411">Buy Now</a>
+
+			</nav>
+
+		</header>
+		<main>
+			<section class="hero">
+                <img src="https://www.bmw-bavariamotors.in/sites/default/files/2026-08/1680x756_1.jpg" alt="BMW on a scenic road">
+                <div class="hero-content">
+                    <h1>The New i5 Long Wheelbase</h1>
+                    <a href="#registration" class="button">REGISTER YOUR INTEREST</a>
+                    <a href="https://configure.bmw.in/en_IN/configure/G68/77FMZLI1" class="button">CONFIGURE & PRICE</a>
+                </div>
+            </section>
+
+            <div class="page-content">
+                <section class="intro">
+                    <p>The first-ever BMW i5 LWB combines executive comfort, progressive luxury, and effortless electric performance in one compelling package. With exceptional spaciousness, advanced technology, and up to 669 km* of range, it redefines what a luxury electric sedan can be.</p>
+
+                    <hr>
+
+                    <h2>The New i5 Long Wheelbase</h2>
+                    <p><strong>STARTING PRICE: ₹79,60,000*</strong></p>
+					<div class="side">
+						<a href="#registration" class="button">REGISTER YOUR INTEREST</a>
+					</div>
+				</section>
+				<hr>
+				<section class="reasons">
+					<h2>5 GOOD REASONS FOR THE<br>NEW i5 LONG WHEELBASE</h2>
+					<div class="reason"><strong>1</strong><p>Biggest car in the segment.</p></div>
+					<div class="reason"><strong>2</strong><p>Most spacious cabin in the segment.</p></div>
+					<div class="reason"><strong>3</strong><p>0–100 km/h in just 6.7 seconds.</p></div>
+					<div class="reason"><strong>4</strong><p>Up to 669 km range on a single charge.</p></div>
+					<div class="reason"><strong>5</strong><p>Rear-axle air suspension for added comfort.</p></div>
+				</section>
+				<hr>
+				
+				<section class="brochure-offers">
+
+					<div class="brochure">
+						<a href="https://www.bmw-bavariamotors.in/sites/default/files/2026-09/i5_LWB_Brochure.pdf" class="download-btn">
+							<i class="ri-download-2-fill"></i>
+							<span>Download<br>Brochure</span>
+						</a>
+					</div>
+					
+					<div class="offers">
+					<hr>
+						<h3>View Offers</h3>
+						<span class="plus">+</span>
+					</div>
+
+				</section>
+				<hr>
+				<section class="highlights" id="highlights">
+					<h2>HIGHLIGHTS OF THE NEW i5 LONG WHEELBASE</h2>
+
+					<div class="highlight-card">
+						<img src="https://www.bmw-bavariamotors.in/sites/default/files/2026-08/Interior_1_1.jpg" alt="BMW interior">
+						<h3>INTERIOR</h3>
+					</div>
+					<div class="highlight-card">
+						<img src="https://www.bmw-bavariamotors.in/sites/default/files/2026-08/exterior_3_2.jpg" alt="BMW exterior">
+						<h3>EXTERIOR</h3>
+					</div>
+					<div class="highlight-card">
+						<img src="https://www.bmw-bavariamotors.in/sites/default/files/2026-08/driving_tech_1.jpg" alt="BMW technology">
+						<h3>TECHNOLOGY</h3>
+					</div>
+					<div class="highlight-card">
+						<img src="https://www.bmw-bavariamotors.in/sites/default/files/2026-08/driving_tech_2_3.jpg" alt="BMW driving">
+						<h3>DRIVING DYNAMICS</h3>
+					</div>
+				</section>
+
+				<section class="registration-layout" id="registration">
+					<div class="registration-section">
+						<h2>Register Your Interest</h2>
+						<p>Please fill in the form below.</p>
+
+						<form class="registration">
+							<label for="branch">Branch</label>
+							<select id="branch" name="branch" required>
+								<option value="">--Select Branch--</option>
+								<option>Pune - Wellesley Road</option>
+								<option>Pune - Hadapsar</option>
+								<option>Pune - Baner</option>
+								<option>Chhatrapati Sambhajinagar</option>
+								<option>Goa</option>
+							</select>
+
+							<label for="salutation">Salutation</label>
+							<select id="salutation" name="salutation" required>
+								<option value="">--Select--</option>
+								<option>Mr</option>
+								<option>Ms</option>
+								<option>Mrs</option>
+							</select>
+
+							<label for="first-name">First Name</label>
+							<input id="first-name" name="first-name" type="text" placeholder="Enter First Name" required>
+
+							<label for="last-name">Last Name</label>
+							<input id="last-name" name="last-name" type="text" placeholder="Enter Last Name" required>
+
+							<label for="email">Email Address</label>
+							<input id="email" name="email" type="email" placeholder="Enter Email Address" required>
+
+							<label for="mobile">Mobile Number</label>
+							<input id="mobile" name="mobile" type="tel" placeholder="Enter Mobile Number" required>
+
+							<div class="check-row">
+								<input id="finance-interest" name="finance-interest" type="checkbox">
+								<label for="finance-interest">I am interested in BMW Financial Services plans and offers.</label>
+							</div>
+
+							<div class="check-row">
+								<input id="terms" name="terms" type="checkbox" required>
+								<label for="terms">I accept the terms and conditions.</label>
+							</div>
+
+							<button type="submit">SUBMIT</button>
+						</form>
+					</div>
+
+					<div class="registration-image">
+						<img src="https://www.bmw-bavariamotors.in/sites/default/files/2026-08/i5%20image.png" alt="BMW i5">
+					</div>
+				</section>
+
+				<hr>
+            </div>
+
+            <section class="shopping">
+                <h2>SHOPPING TOOLS</h2>
+                <div class="shopping-line"></div>
+
+                <a href="https://www.bmw-bavariamotors.in/offer" class="tool-card">
+                    <i class="ri-price-tag-3-fill"></i>
+                    <p>Retail Offers</p>
+                </a>
+
+                <a href="https://www.bmw-bavariamotors.in/sites/default/files/2020-03/test-drive.png" class="tool-card">
+                    <i class="ri-steering-2-fill"></i>
+                    <p>Book Test Drive</p>
+                </a>
+
+                <a href="https://www.bmwusedcars.in/bavaria-motors" class="tool-card">
+                    <i class="ri-car-line"></i>
+                    <p>Pre-Owned BMW</p>
+                </a>
+            </section>
+
+            <section class="finance">
+                <h3>FINANCE</h3>
+                <p>In the world of BMW, world-class isn't limited to the vehicles that we engineer. <a href="#">Know More</a></p>
+
+                <h3>DISCLAIMER</h3>
+                <p>*Terms and conditions apply. All offers are from BMW dealerships. <a href="#">Know More</a></p>
+            </section>
+        </main>
+        <footer>
+            <section class="footer-content">
+                <div class="footer-column">
+                    <h4>PUNE - WELLESLEY ROAD</h4>
+                    <b>Sales</b>
+                    <p>15 B, Wellesley Road,<br>Beside Lal Deval,<br>Camp, Pune, Maharashtra,<br>India - 411001.<br>Tel.: +91 8882990999<br>Business Number: +91 9922970111<br>Email: social@bmw-bavariamotors.in</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>PUNE - HADAPSAR INDUSTRIAL ESTATE</h4>
+                    <b>Service</b>
+                    <p>Plot No. 25, Near Wanowrie Police Station,<br>Hadapsar Industrial Estate,<br>Pune, Maharashtra,<br>India - 411013.<br>Tel.: +91 8238689900<br>Business Number: +91 7066244446<br>Email: social@bmw-bavariamotors.in</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>PUNE - BANER</h4>
+                    <b>Sales</b>
+                    <p>Global Port, Showroom No. 2,<br>S No. 45/1,<br>Pune - Bangalore Highway,<br>Baner, Pune, Maharashtra,<br>India - 411045.<br>Tel.: +91 9011733300<br>Email: social@bmw-bavariamotors.in</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>CHHATRAPATI SAMBHAJINAGAR</h4>
+                    <b>Sales & Service</b>
+                    <p>Plot No P/1/2,<br>MIDC,<br>Chikalthana Industrial Area,<br>Chhatrapati Sambhajinagar,<br>Maharashtra,<br>India - 431006.<br>Tel.: +91 8882155000<br>Email: social@bmw-bavariamotors.in</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>GOA</h4>
+                    <b>Sales & Service</b>
+                    <p>Plot No. 2B,<br>Phase 1A,<br>Verna Industrial Estate,<br>Verna, Goa,<br>India - 403722.<br>Tel.: +91 8882655000<br>Email: social@bmw-bavariamotors.in</p>
+                </div>
+            </section>
+
+            <section class="footer-links">
+                <div>
+                    <h4>QUICK LINKS</h4>
+                    <a href="https://www.bmw-bavariamotors.in/test-drive">Book A Test Drive</a>
+                    <a href="https://www.bmw-bavariamotors.in/offer">Retail Offers</a>
+                    <a href="https://www.bmwusedcars.in/bavaria-motors">Pre-Owned Cars</a>
+                </div>
+
+                <div>
+                    <h4>CONTACT US</h4>
+                    <a href="https://www.bmw-bavariamotors.in/about-us">About Us</a>
+                    <a href="https://www.bmw-bavariamotors.in/find-us">Locate Us</a>
+                    <a href="https://www.bmw-bavariamotors.in/the-team">The Team</a>
+                </div>
+
+                <div>
+                    <h4>FOLLOW US</h4>
+                    <a class="social-link" href="https://www.facebook.com/bmwbavariamotors/"><i class="ri-facebook-fill"></i></a>
+                    <a class="social-link" href="https://twitter.com/Bavaria_Motors_"><i class="ri-twitter-x-line"></i></a>
+                </div>
+            </section>
+				<hr>
+            <div class="copyright">
+                <p>© BMW AG 2026</p>
+                <div>
+                    <a href="https://www.bmw-bavariamotors.in/sitemap">Sitemap</a>
+                    <a href="https://www.bmw-bavariamotors.in/privacy-policy">Privacy Policy</a>
+                    <a href="https://www.bmw-bavariamotors.in/legal-disclaimer-imprint">Legal Disclaimer / Imprint</a>
+                </div>
+            </div>
+        </footer>
+		
+		<a href="#top" class="back-top"><i class="ri-arrow-up-wide-line"></i></a>
 	</body>
 </html>
